@@ -52,7 +52,7 @@ public class _03_Javase {
         //  bu kelimenin 4.harften sonra gösterilsin ? [ ipucu: substring(4)]
         //  bu kelimenin sonuna INC ekleyelim  ? [ ipucu: concat(".INC")]
         //  bu kelimenin içerisinde java44 geçiyor mu ? [ ipucu: contains("java44")]
-        //  bu kelimenin "deneme" ile aynı mı ?  [ipucu: ipucu: equals("deneme");]
+        //  bu kelimenin "Deneme" ile aynı mı ?  [ipucu: ipucu: equals("Deneme");]
 
     }
  }
