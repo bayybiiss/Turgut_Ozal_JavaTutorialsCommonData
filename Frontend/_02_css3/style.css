@@ -1,0 +1,116 @@
+/* *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html{
+    font-size: 20px;
+}
+
+body{
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+
+img{
+    max-width: 100%;
+    height: auto;
+    border-radius: 50% 50%;
+}
+
+img:hover{
+    opacity: 0.8; /*üzerine gelindiğinde resmi flu yapar 
+    transition: 2s all; /*işlemi 2 sn ye uzunluğunda yapar anında değil
+} */
+
+/*border solid ile çerçeve oluştuurduk kalınlığı 1px olan 
+solid ile düz çizgiler olduğunu ve renginin mavi olduğunu*/
+/* #div_id{
+    border: 1px solid blue;
+    margin-top: 10px;
+    width: 400px; /*genişlik
+    height: 25rem; /*yükseklik
+
+} */
+
+
+
+/*div_id:hover  hover: div!in üzerine geldiği zaman yapmak istediğimiz
+değişiklikleri ya da işlemleri tanımlamamızı sağlayan yapıdır
+curdor:pointer; paragrafın üzerine geldiğimizdebir el işareti çıkmasının sağlar*/
+/* #div_id:hover{
+    cursor: pointer;
+    width: 200px;
+} */
+
+
+
+/*
+#param_id{
+    color: red;
+    background-color: black;
+    /* padding:iç boşluk saatin dönme yönünde devam eeder  */
+  /*  padding: 30px; /*sayfanın her tarafından 30px lik boşluk bırakır*/
+  /*  padding-top: 30px; /*sayfanın üstünden boşluk*/
+  /*  padding-left: 30px; /*sayfanın solundan 30px boşluk*/
+  /*  padding-right: 30px; /*sayfanın sağından 30pxlik boşluk*/
+  /*  padding-bottom: 30px; /*sayfanın altından 30px lik boşluk*/
+  /*  padding: 20px 40px; /*ilk 10px y düzlemindeki boşuk 20px x düzlemindeki boşluk*/
+    /*margin ise sayfanın dış boşluğunu oluşturur*/
+  /*  margin: 4px auto; /*auto her zaman sayfayla birlikte büyür küçülür*/
+/*
+}
+/* 
+h2{
+    color:brown
+}
+
+#h3_id{
+    background-color: aquamarine;
+}
+
+.h3_class{
+    padding:2rem;
+} */
+
+img{
+    max-width: 100%;
+    height: auto;
+    border-radius: 50% 50%;
+}
+
+div{
+    border: 1px solid blanchedalmond;
+    width: 100%;
+    float: left;
+}
+
+/*RD: Responsive Design ekranın büyüdükçe bölünmesini sağlayabilirz*/
+@media screen and (min-width:1px){
+    div{
+        width: 100%;
+        float: left;
+        background-color: antiquewhite;
+    }
+}
+@media screen and (min-width:600px){
+    div{
+        width: 50%;
+        float: left;
+        background-color: aqua;
+    }
+}
+@media screen and (min-width:900px){
+    div{
+        width: 33%;
+        float: left;
+        background-color: cadetblue;
+    }
+}
+@media screen and (min-width:1200px){
+    div{
+        width: 25%;
+        float: left;
+        background-color: azure;
+    }
+}
