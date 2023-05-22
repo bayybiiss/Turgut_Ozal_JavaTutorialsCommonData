@@ -240,3 +240,11 @@ let object = ()=>{
     console.log(obj.dizi[3])
 }
 object()
+
+//date
+document.writeln("<br/>")
+let date = ()=>{
+    let value=new Date().getFullYear()
+    console.log(value)
+}
+date()
