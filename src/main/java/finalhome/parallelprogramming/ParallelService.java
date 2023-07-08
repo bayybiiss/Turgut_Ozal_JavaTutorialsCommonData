@@ -9,6 +9,7 @@ import java.util.Scanner;
 public class ParallelService extends Thread{
     public static final String PERSON_URL="C:\\Users\\Excalibur\\IdeaProjects\\person.txt";
     public static final String SECRET_URL="C:\\Users\\Excalibur\\IdeaProjects\\secret.txt";
+    public static final String THIRD_URL="C:\\Users\\Excalibur\\IdeaProjects\\third.txt";
 
     //1. Veri
     public String userDataInformation(){
@@ -24,7 +25,6 @@ public class ParallelService extends Thread{
         stringBuilder.append(userName).append("\n").append(password).append("\n").append(email);
         return stringBuilder.toString();
     }
-
     public void  fileIoUserDataInformation() {
         try (BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(PERSON_URL, false))) {
             String userData = userDataInformation();
@@ -56,6 +56,27 @@ public class ParallelService extends Thread{
         }
     }
 
+    /////////////////////////////////////////////////////////////////////////////////////////
+    //3. Veri
+    public String userDataThirdInformation(){
+        Scanner klavye = new Scanner(System.in);
+        String thirdInformation;
+        System.out.println("thirdInformation Girin");
+        thirdInformation=klavye.nextLine();
+        //secretInformation=JOptionPane.showInputDialog("thirdInformation Girin");
+        return thirdInformation;
+    }
+    public void  fileIoUserDataThirdInformation() {
+        try (BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(THIRD_URL, false))) {
+            String userData = userDataThirdInformation();
+            bufferedWriter.write(userData);
+            bufferedWriter.flush();
+            System.out.println("Bilgiler dosyaya kaydedildi.");
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
     ////////////////////////////////////////////////////////////////////////////////////////////////////////
     //MultiThread
     public static void main(String[] args) throws InterruptedException {
@@ -67,11 +88,18 @@ public class ParallelService extends Thread{
         ParallelService parallelService2= new ParallelService();
         parallelService2.fileIoUserDataSecretInformation();//fileIoUserDataSecretInformation
 
+        //3. Thread
+        ParallelService parallelService3= new ParallelService();
+        parallelService3.fileIoUserDataThirdInformation();//fileIoUserDataThirdInformation
+
         parallelService1.start();
         parallelService1.join(); //1. thread'in tammamlanmasını bekler
 
         parallelService2.start();
         parallelService2.join();// 2. thread'in tammalanamasınını bekler
+
+        parallelService3.start();
+        parallelService3.join();// 2. thread'in tammalanamasınını bekler
     }
 
 

@@ -1,0 +1,4 @@
+--maven
+-maven clean install -DskipTest
+
+docker-compose up -d
