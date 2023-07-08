@@ -93,15 +93,13 @@ public class ParallelService extends Thread{
         parallelService3.fileIoUserDataThirdInformation();//fileIoUserDataThirdInformation
 
         parallelService1.start();
-        parallelService1.join(); //1. thread'in tammamlanmasını bekler
+        parallelService1.join(); //1. thread'in tammaamlanmasını bekler
 
         parallelService2.start();
-        parallelService2.join();// 2. thread'in tammalanamasınını bekler
+        parallelService2.join();// 2. thread'in tamamalanamasınını bekler
 
         parallelService3.start();
-        parallelService3.join();// 2. thread'in tammalanamasınını bekler
+        parallelService3.join();// 3. thread'in tamamalanamasınını bekler
     }
-
-
 }
 
