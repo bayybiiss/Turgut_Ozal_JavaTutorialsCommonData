@@ -6,15 +6,19 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.web.bind.annotation.CrossOrigin;
+
 import java.io.Serializable;
 
+//lombok
 @Data
 @NoArgsConstructor
 
 //Entity
 @Entity
 @Table(name = "jquery")
-public class JqueryEntity extends BaseEntity implements Serializable {
+@CrossOrigin
+public class JqueryEntity extends BaseEntity implements Serializable{
     //serileştirme
     public static final long serialVersionUID = 1L;
 

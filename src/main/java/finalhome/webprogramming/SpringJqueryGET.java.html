@@ -9,23 +9,56 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
-
   <!-- jquery ajax -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
-
 </head>
-<body>
-<p class="text-center display-4">GET</p>
+<body style="background-color: #152733;">
+  <nav class="navbar navbar-expand-lg bg-light text-center fw-bold text-break">
+    <div class="container">
+        <a class="navbar-brand text-center fw-bold text-break" href="#" style="font-size: 20px;">Get</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse " id="navbarNav">
+            <ul class="navbar-nav ms-auto text-center fw-bold text-break">
+                <li class="nav-item text-center fw-bold text-break">
+                    <a class="nav-link " href="Home.html" style="font-size: 18px;">Home</a>
+                </li>
+                <li class="nav-item text-center fw-bold text-break">
+                    <a class="nav-link" href="SpringJqueryGET.java.html" style="font-size: 18px;">Get</a>
+                </li>
+                <li class="nav-item text-center fw-bold text-break">
+                    <a class="nav-link" href="SpringJqueryPOST.html" style="font-size: 18px;">Post</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
 
-<table class="table hover table-striped" id="table_id">
-</table>
 
-<div id="my_get_id">BOŞ</div>
+<div class="container">
+  <div class="row justify-content-center mt-5 h-100 d-flex align-items-center justify-content-center mb-5">
+      <div class="container form-wrapper rounded-5 overflow-hidden">
+          <div class="signup-form py-3 row align-items-center justify-content-center">
+              <div class="col-12 col-sm-8 col-md-8 col-lg-6 col-xl-6">
+             
+                <div class="text-center display-4">GET</div>
+
+                <table class="table hover table-striped" id="table_id">
+                </table>
+                
+                <div class="text-center display-6" id="my_get_id">BOŞ</div>
+              </div> 
+          </div>
+      </div>
+  </div>
+</div>
+
 
 <script>
   $(document).ready(function () {
-    const GET_URL = "http://localhost:4444/api/v1/jquery/get";
-
+    const GET_URL = "http://localhost:8888/api/v1/jquery/get";
     $.get(GET_URL, function (data, status) {
       if (status == "success") {
         console.log(status + " ");
@@ -38,7 +71,6 @@
         myDataList(data);
       }
     }) //end get
-
     let myDataList = (data) => {
       let tableRow = `
               <tr>
@@ -60,7 +92,6 @@
       } //end for
       document.getElementById("table_id").innerHTML=tableRow;
     }// myDataList
-
   }); //end ready
 </script>
 </body>

@@ -3,6 +3,10 @@ package finalhome.webprogramming;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
@@ -11,19 +15,20 @@ import java.util.List;
 @RequiredArgsConstructor //injection
 @Log4j2
 
+
 //API: Dış Dünyaya açılan kapıdır.
 @RestController
 @RequestMapping("/api/v1/jquery")
-@CrossOrigin //(origins = "http://localhost:3000")
+@CrossOrigin
 
-public class JquerySpringApi {
+public class JquerySpringApi  {
     //INJECTION
     private final IJqueryService iJqueryService;
     //Constructor Injection
 
     // +++++++++ CRUD  ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
     // CREATE
-    // http://localhost:4444/api/v1/jquery/post
+    // http://localhost:8080/api/v1/jquery/post
     //@RequestMapping(  value ="/post",method = RequestMethod.POST ,produces = {"application/json"}, consumes = {"application/x-www-form-urlencoded;charset=UTF-8"})
     //  /* @PostMapping(
     //            path = "/{email}/authenticate",
@@ -41,7 +46,7 @@ public class JquerySpringApi {
     }
 
     // LIST
-    // http://localhost:4444/api/v1/jquery/get
+    // http://localhost:8080/api/v1/jquery/get
     @GetMapping(value = "/get")
     public ResponseEntity<List<JqueryDto>>  getAllRegisters() {
         return ResponseEntity.ok(iJqueryService.getAllRegisters());
